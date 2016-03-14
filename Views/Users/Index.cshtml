@@ -48,6 +48,8 @@
     </tr>
 
 @foreach (var item in Model) {
+
+    if (item.Password == null) { 
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.Name)
@@ -88,6 +90,7 @@
             @Html.ActionLink("Delete", "Delete", new { id=item.Id })
         </td>
     </tr>
+}
 }
 
 </table>

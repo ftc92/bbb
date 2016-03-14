@@ -14,8 +14,8 @@
 
 <form method="post" action="/Users/Search">
 
-
-
+Search by:
+    @Html.RadioButton("searchby","cst") Cast<br/>
     <select id="cast" name="cast">
 
 
@@ -39,6 +39,23 @@
         <option value="Somro">Somro</option>
         <option value="Other">Other</option>
 
+
+    </select>
+    <br />
+    Search by:
+    @Html.RadioButton("searchby", "q") Qualification<br />
+
+    <select id="qualification" name="qualification">
+
+
+
+        <option value="primary">primary</option>
+        <option value="middle">middle</option>
+        <option value="ssc">ssc</option>
+        <option value="hsc">hsc</option>
+        <option value="intermediate">intermediate</option>
+        <option value="undergraduate">undergraduate</option>
+        <option value="other">other</option>
 
     </select>
     <input type="submit" class="btn btn-info" value="Search" />
