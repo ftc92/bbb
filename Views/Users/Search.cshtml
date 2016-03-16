@@ -115,7 +115,8 @@ Search by:
     </tr>
 
     @foreach (var item in Model)
-    {
+    {  
+        if(item.Password==null){
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Name)
@@ -152,6 +153,7 @@ Search by:
             </td>
           
         </tr>
+        }
     }
 
 </table>
