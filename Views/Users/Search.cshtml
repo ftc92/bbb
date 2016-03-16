@@ -58,6 +58,19 @@ Search by:
         <option value="other">other</option>
 
     </select>
+    <br/>
+
+    Search by:
+    @Html.RadioButton("searchby", "age") Age<br />
+
+   Min: @Html.TextBox("age1")-Max: @Html.TextBox("age2")
+
+    <br />
+
+    Search by:
+    @Html.RadioButton("searchby", "income") Income<br />
+
+    Min: @Html.TextBox("in1")-Max: @Html.TextBox("in2")
     <input type="submit" class="btn btn-info" value="Search" />
 
 </form>
