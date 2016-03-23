@@ -13,6 +13,15 @@
         </div>
     </section>
 }
+<script src="~/Scripts/jquery-1.7.1.js"></script>
+<title>Index</title>
+
+
+<input type="text" id="t1" />
+<input type="button" value="Embed Your Code here" id="b1" />
+<div id="d1" style="margin-left:auto;margin-right:auto;width:544px;">
+
+</div>
 
 
 
@@ -49,7 +58,18 @@
 
 
 @Scripts.Render("~/bundles/jquery")
+
+
 <script>
+    $(document).ready(function () {
+        $("#b1").on("click", function () {
+            var v = $("#t1").val();
+            $("#d1").html(v);
+            $.getJSON("/Home/Embeded")
+        });
+    });
+</script>
+@*<script>
 
     $(document).ready(function () {
 
@@ -75,4 +95,4 @@
         });
 
     });
-</script>
+</script>*@
