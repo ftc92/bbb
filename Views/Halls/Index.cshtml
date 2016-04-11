@@ -16,6 +16,7 @@
         <h1>@s.Name</h1>
         <p>@s.Address</p>
         <p>@s.Contact</p>
+      <p> @Html.ActionLink("Details", "Details", new {id=s.Id})</p>
         <div style="clear:both"></div>
        
 }

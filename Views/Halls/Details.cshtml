@@ -1,0 +1,40 @@
+﻿@model MvcApplication4.Models.Hall
+
+@{
+    ViewBag.Title = "Details";
+}
+<h1>@Model.Name       </h1>
+<table>
+    <tr>
+        <td>
+            <h2>Promotions                </h2>
+
+            @foreach (var s in Model.Promotions)
+            {
+                <b style="color:hotpink">@s.Desc</b>
+
+
+            }
+            <h2>Available Halls</h2>
+
+            @foreach (var s in Model.h)
+            {
+                <label> @s.name   <b style="color:green">available    @Html.ActionLink("Book now", "Details", new { id = s.Id })</b></label>   
+
+
+            }
+        
+        <h2> Videos</h2>
+
+            @foreach (var s in Model.Videos)
+            {
+              <iframe width="420" height="315" src=@s.Link>
+</iframe>
+               // <iframe width="420" height="315" src="https://www.youtube.com/embed/A0NRccjxF9g" frameborder="0" allowfullscreen></iframe>
+              // @s.Link;
+                
+            }
+        
+
+    </tr>
+</table>
