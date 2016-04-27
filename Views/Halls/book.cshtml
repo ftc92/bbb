@@ -1,0 +1,17 @@
+﻿@model IEnumerable<MvcApplication4.Models.h>
+
+@{
+    ViewBag.Title = "book";
+}
+
+<h2>Booking</h2>
+
+@*@if (@ViewBag.list != null)
+{*@
+    @foreach (var s in Model)
+    {
+        <label> @s.name   <b style="color:green">available    @Html.ActionLink("Book now", "book", new { id = s.Id})</b></label>
+
+
+    }
+
