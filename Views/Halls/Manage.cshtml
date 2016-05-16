@@ -5,7 +5,7 @@
     ViewBag.Title = "Details";
 }
 
-<h1>Manage   </h1>
+<h1>@a.Name   </h1>
 <h2>Booking  </h2>
 
 <table >
@@ -14,7 +14,7 @@
     {
         foreach (var b in h.Bookings) { 
 
-        <tr><td>@b.h.name</td><<td>@b.date</td><td>@b.people</td><td>@b.status</td></tr>
+        <tr><td>@b.h.name</td><<td>@b.date</td><td>@b.people</td><td>@b.status</td><td>@Html.ActionLink("Approve", "Approve", new {id=@b.Id})</td><td>@Html.ActionLink("Cancel", "Cancel", new {id=@b.Id})</td><td>@Html.ActionLink("Delete", "Delete", new {id=@b.Id})</td></tr>
 
 
     }
@@ -25,27 +25,28 @@
 <table>
     <tr>
         <td> 
+            <h2>@Html.ActionLink("Add/Delete Halls", "Index", "Halls2")              </h2>
             <h2>Promotions              </h2>
-            var a=3;
+           
             @foreach (var s in a.Promotions)
             {
-                <b style="color:hotpink">@s.Desc</b>
+                <b style="color:hotpink">@s.Desc</b>  
 
 
 
             }
-            <h2>Available Halls </h2>
+            @*<h2>Available Halls </h2>
             Select Date:
             <form method="post" action="/Halls/book">
                 <input type="date" name="Date" id="Date" />
                 <input type="hidden" value="@a.Id" name="id" />
 
                 <input type="submit" class="btn btn-info" value="Check" />
-            </form>
+            </form>*@
 
 
 
-            @if (@ViewBag.list != null)
+            @*@if (@ViewBag.list != null)
             {
                 foreach (var s in @ViewBag.list)
                 {
@@ -53,16 +54,16 @@
 
 
                 }
-            }
-        </td>
-        <td>
+            }*@
+        
+       
             <h2> Videos </h2>
 
             @foreach (var s in a.Videos)
             {
                 //<iframe width="420" height="315" src=@s.Link> </iframe>
                 //   <iframe width="560" height="315" src="https://www.youtube.com/embed/AdyC1LJ2pWM" frameborder="0" allowfullscreen></iframe>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/AdyC1LJ2pWM" frameborder="0" allowfullscreen></iframe>;
+                <iframe width="560" height="315" src="@s.Link" frameborder="0" allowfullscreen></iframe>;
 
                 //WebUtility.HtmlEncode(@s.Link);
 

@@ -5,17 +5,17 @@
     ViewBag.Title = "Details";
 }
 
-<h1>   </h1>
+<h1>  @a.Name </h1>
 <table>
     <tr>
         <td>
             <h2>Promotions              </h2>
-             var a=3;
+            
             @foreach (var s in a.Promotions)
             { 
                 <b style="color:hotpink">@s.Desc</b>
 
-
+                
                 
             }
             <h2>Available Halls </h2>
@@ -32,27 +32,28 @@
             @if( @ViewBag.list!=null){
                 foreach (var s in @ViewBag.list)
                 {
-                    <label> @s.name    <b style="color:green">available    @Html.ActionLink("Book now", "book", new { id = s.Id })</b></label>
+                    <label> @s.name   <b style="color:green">available    @Html.ActionLink("Book now", "book", new { id = s.Id })</b></label>
 
 
                 }}
             </td>
         <td>
             <h2> Videos </h2>
+            @if (a.Videos!=null) { 
+            foreach (var s in a.Videos)
+{
+    //<iframe width="420" height="315" src=@s.Link> </iframe>
+    //   <iframe width="560" height="315" src="https://www.youtube.com/embed/AdyC1LJ2pWM" frameborder="0" allowfullscreen></iframe>
+                
+    <div>
+        <iframe width="560" height="315" src=@s.Link frameborder="0" ></iframe>;
 
-            @foreach (var s in a.Videos)
-            {
-                //<iframe width="420" height="315" src=@s.Link> </iframe>
-                //   <iframe width="560" height="315" src="https://www.youtube.com/embed/AdyC1LJ2pWM" frameborder="0" allowfullscreen></iframe>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/AdyC1LJ2pWM" frameborder="0" allowfullscreen></iframe>;
+    </div>  
 
-                //WebUtility.HtmlEncode(@s.Link);
 
-                <div>
 
-                </div>
+}
             }
-
         </td>
 
 </tr>

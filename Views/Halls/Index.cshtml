@@ -2,8 +2,8 @@
 @{
     ViewBag.Title = "Index";
 }
-
-<h2></h2>
+<h2>@Html.ActionLink("Add Marriage Hall", "Create")</h2>
+<h2>@Html.ActionLink("Manage your MarriageHall", "Manage")</h2>
 
 
     @foreach (var s in Model)
